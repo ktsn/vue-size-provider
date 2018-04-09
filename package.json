@@ -1,0 +1,55 @@
+{
+  "name": "vue-size-watcher",
+  "version": "0.0.0",
+  "author": "katashin",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "main": "dist/vue-size-watcher.cjs.js",
+  "module": "dist/vue-size-watcher.esm.js",
+  "unpkg": "dist/vue-size-watcher.js",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/ktsn/vue-size-watcher",
+  "bugs": "https://github.com/ktsn/vue-size-watcher/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ktsn/vue-size-watcher.git"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run release",
+    "clean": "rm -rf dist .tmp",
+    "build": "node scripts/build.js",
+    "build:test": "webpack --config scripts/webpack.config.test.js",
+    "watch:test": "webpack -w --config scripts/webpack.config.test.js",
+    "lint": "eslint \"@(src|test|scripts)/**/*.js\"",
+    "lint:fix": "eslint --fix \"@(src|test|scripts)/**/*.js\"",
+    "testem": "testem",
+    "testem:ci": "testem ci",
+    "dev": "run-p watch:test testem",
+    "test": "run-s lint test:unit",
+    "test:unit": "run-s build:test testem:ci",
+    "release": "run-s test clean build"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-power-assert": "^2.0.0",
+    "eslint": "^4.19.0",
+    "eslint-config-ktsn": "^1.0.3",
+    "glob": "^7.1.2",
+    "npm-run-all": "^4.1.2",
+    "power-assert": "^1.4.4",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-replace": "^2.0.0",
+    "testem": "^2.0.0",
+    "uglify-js": "^3.3.15",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  }
+}
