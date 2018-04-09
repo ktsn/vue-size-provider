@@ -9,12 +9,5 @@
   ],
   "plugins": [
     "external-helpers"
-  ],
-  "env": {
-    "test": {
-      "presets": [
-        "power-assert"
-      ]
-    }
-  }
+  ]
 }

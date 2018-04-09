@@ -18,7 +18,22 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        options: {
+          babelrc: false,
+          presets: [
+            [
+              'env',
+              {
+                modules: false,
+                targets: {
+                  browsers: ['last 1 Chrome versions']
+                }
+              }
+            ],
+            'power-assert'
+          ]
+        }
       }
     ]
   },
