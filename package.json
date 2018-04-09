@@ -49,6 +49,7 @@
     "rollup-plugin-replace": "^2.0.0",
     "testem": "^2.0.0",
     "uglify-js": "^3.3.15",
+    "vue": "^2.5.16",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12"
   }

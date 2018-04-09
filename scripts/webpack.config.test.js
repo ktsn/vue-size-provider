@@ -11,7 +11,10 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.js']
+    extensions: ['.js'],
+    alias: {
+      vue$: 'vue/dist/vue.esm.js'
+    }
   },
   module: {
     rules: [

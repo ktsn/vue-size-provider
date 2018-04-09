@@ -1,7 +1,7 @@
-// @flow
+import SizeProvider from './SizeProvider'
 
-export const world: string = 'Hello World!'
+export { SizeProvider }
 
-if (process.env.NODE_ENV !== 'production') {
-  console.log('This log is output in development mode only') // eslint-disable-line
+export default function install(Vue) {
+  Vue.component('size-provider', SizeProvider)
 }
