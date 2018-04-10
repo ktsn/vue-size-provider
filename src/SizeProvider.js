@@ -29,22 +29,17 @@ export default {
     const children =
       this.$scopedSlots.default && this.$scopedSlots.default(this.size)
 
-    const child = onlyNode(children)
-    return child || h()
+    return onlyNode(children) || h()
   }
 }
 
 function onlyNode(vnodes) {
-  if (!vnodes) {
-    return
-  }
-
   if (!Array.isArray(vnodes)) {
     return vnodes
   }
 
-  if (vnodes.length > 1) {
-    console.warn('[vue-size-watcher] <SizeProvider> slot must be only element')
+  if (process.env.NODE_ENV !== 'production' && vnodes.length > 1) {
+    console.warn('[vue-size-provider] <SizeProvider> slot must be only element')
   }
 
   return vnodes[0]
