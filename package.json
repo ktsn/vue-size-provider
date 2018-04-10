@@ -1,21 +1,21 @@
 {
-  "name": "vue-size-watcher",
+  "name": "vue-size-provider",
   "version": "0.0.0",
   "author": "katashin",
   "description": "",
   "keywords": [],
   "license": "MIT",
-  "main": "dist/vue-size-watcher.cjs.js",
-  "module": "dist/vue-size-watcher.esm.js",
-  "unpkg": "dist/vue-size-watcher.js",
+  "main": "dist/vue-size-provider.cjs.js",
+  "module": "dist/vue-size-provider.esm.js",
+  "unpkg": "dist/vue-size-provider.js",
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/ktsn/vue-size-watcher",
-  "bugs": "https://github.com/ktsn/vue-size-watcher/issues",
+  "homepage": "https://github.com/ktsn/vue-size-provider",
+  "bugs": "https://github.com/ktsn/vue-size-provider/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ktsn/vue-size-watcher.git"
+    "url": "https://github.com/ktsn/vue-size-provider.git"
   },
   "scripts": {
     "prepublishOnly": "npm run release",

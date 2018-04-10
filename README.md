@@ -1,4 +1,4 @@
-# vue-size-watcher
+# vue-size-provider
 
 ## License
 
