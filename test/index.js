@@ -1,9 +1,11 @@
 import assert from 'power-assert'
 import Vue from 'vue'
-import { SizeProvider } from '../src/index'
+import install from '../src/index'
 
 Vue.config.devtools = false
 Vue.config.productionTip = false
+
+Vue.use(install)
 
 describe('SizeProvider', () => {
   let wrapper, app
@@ -26,59 +28,57 @@ describe('SizeProvider', () => {
 
   it('provides current element size', async () => {
     const vm = new Vue({
-      components: {
-        SizeProvider
-      },
-
-      template: `<SizeProvider>
+      template: `<size-provider>
         <div
+          ref="test"
           slot-scope="{ width, height }"
           :style="{ width: width + 'px', height: height + 'px' }"
         >
-          <div style="height: 50px; width: 100px;"></div>
+          <size-observer style="height: 50px; width: 100px;" />
         </div>
-      </SizeProvider>
+      </size-provider>
       `
     }).$mount(app)
 
+    const test = vm.$refs.test
+
     // initial render
-    assert(vm.$el.style.width === '0px')
-    assert(vm.$el.style.height === '0px')
+    assert(test.style.width === '0px')
+    assert(test.style.height === '0px')
 
     // next render
     await vm.$nextTick()
-    assert(vm.$el.style.width === '100px')
-    assert(vm.$el.style.height === '50px')
+    assert(test.style.width === '100px')
+    assert(test.style.height === '50px')
   })
 
   it('re-renders if the element size is changed', async () => {
     const vm = new Vue({
-      components: {
-        SizeProvider
-      },
-
       data: {
         value: 100
       },
 
-      template: `<SizeProvider>
+      template: `<size-provider>
         <div
+          ref="test"
           slot-scope="{ width, height }"
           :style="{ width: width + 'px', height: height + 'px' }"
         >
-          <div style="height: 50px;" :style="{ width: value + 'px' }"></div>
+          <size-observer style="height: 50px;" :style="{ width: value + 'px' }" />
         </div>
-      </SizeProvider>
+      </size-provider>
       `
     }).$mount(app)
 
+    const test = vm.$refs.test
+
     await vm.$nextTick()
-    assert(vm.$el.style.width === '100px')
-    assert(vm.$el.style.height === '50px')
+    assert(test.style.width === '100px')
+    assert(test.style.height === '50px')
 
     vm.width = 150
     await vm.$nextTick()
-    assert(vm.$el.style.width === '100px')
-    assert(vm.$el.style.height === '50px')
+    assert(test.style.width === '100px')
+    assert(test.style.height === '50px')
   })
 })

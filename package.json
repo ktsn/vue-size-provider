@@ -44,6 +44,7 @@
     "glob": "^7.1.2",
     "npm-run-all": "^4.1.2",
     "power-assert": "^1.4.4",
+    "resize-observer-polyfill": "^1.5.0",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-node-resolve": "^3.3.0",
@@ -51,7 +52,6 @@
     "testem": "^2.0.0",
     "uglify-js": "^3.3.15",
     "vue": "^2.5.16",
-    "vue-resize": "^0.4.4",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12"
   }

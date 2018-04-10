@@ -16,8 +16,8 @@ const banner = `/*!
  * Released under the MIT license
  * ${pkg.homepage}/blob/master/LICENSE
  *
- * Contains vue-resize by Akryum
- * https://github.com/Akryum/vue-resize
+ * Contains resize-observer-polyfill by que-etc
+ * https://github.com/que-etc/resize-observer-polyfill
  * Released under the MIT license
  */`
 
