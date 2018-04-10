@@ -2,6 +2,7 @@ const fs = require('fs')
 const { rollup } = require('rollup')
 const babel = require('rollup-plugin-babel')
 const replace = require('rollup-plugin-replace')
+const nodeResolve = require('rollup-plugin-node-resolve')
 const uglify = require('uglify-js')
 const options = require('./options')
 const pkg = require('../package.json')
@@ -14,15 +15,21 @@ const banner = `/*!
  * Copyright (c) 2018 ${pkg.author}
  * Released under the MIT license
  * ${pkg.homepage}/blob/master/LICENSE
+ *
+ * Contains vue-resize by Akryum
+ * https://github.com/Akryum/vue-resize
+ * Released under the MIT license
  */`
 
 const baseConfig = {
   input: 'src/index.js',
   output: {
     name: capitalize(pkg.name),
+    exports: 'named',
     banner
   },
   plugins: [
+    nodeResolve(),
     babel({
       exclude: 'node_modules/**'
     })

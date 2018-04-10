@@ -1,3 +1,20 @@
+import { ResizeObserver } from 'vue-resize'
+
+const resizeObserverStyle = {
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  'z-index': '-1',
+  width: '100%',
+  height: '100%',
+  border: 'none',
+  'background-color': 'transparent',
+  'pointer-events': 'none',
+  display: 'block',
+  overflow: 'hidden',
+  opacity: '0'
+}
+
 export default {
   name: 'SizeProvider',
 
@@ -17,10 +34,6 @@ export default {
     }
   },
 
-  updated() {
-    this.saveSize()
-  },
-
   mounted() {
     this.saveSize()
   },
@@ -29,7 +42,21 @@ export default {
     const children =
       this.$scopedSlots.default && this.$scopedSlots.default(this.size)
 
-    return onlyNode(children) || h()
+    const child = onlyNode(children)
+    if (!child) {
+      return h()
+    }
+
+    child.children = (child.children || []).concat([
+      h(ResizeObserver, {
+        style: resizeObserverStyle,
+        on: {
+          notify: this.saveSize
+        }
+      })
+    ])
+
+    return child
   }
 }
 
@@ -39,7 +66,7 @@ function onlyNode(vnodes) {
   }
 
   if (process.env.NODE_ENV !== 'production' && vnodes.length > 1) {
-    console.warn('[vue-size-provider] <SizeProvider> slot must be only element')
+    console.warn('[vue-size-provider] slot must be only element')
   }
 
   return vnodes[0]
