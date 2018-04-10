@@ -40,16 +40,16 @@ describe('SizeProvider', () => {
       `
     }).$mount(app)
 
-    const test = vm.$refs.test
+    const el = vm.$refs.test
 
     // initial render
-    assert(test.style.width === '0px')
-    assert(test.style.height === '0px')
+    assert(el.clientWidth === 0)
+    assert(el.clientHeight === 0)
 
     // next render
-    await vm.$nextTick()
-    assert(test.style.width === '100px')
-    assert(test.style.height === '50px')
+    await nextFrame()
+    assert(el.clientWidth === 100)
+    assert(el.clientHeight === 50)
   })
 
   it('re-renders if the element size is changed', async () => {
@@ -70,15 +70,21 @@ describe('SizeProvider', () => {
       `
     }).$mount(app)
 
-    const test = vm.$refs.test
+    const el = vm.$refs.test
 
-    await vm.$nextTick()
-    assert(test.style.width === '100px')
-    assert(test.style.height === '50px')
+    await nextFrame()
+    assert(el.clientWidth === 100)
+    assert(el.clientHeight === 50)
 
-    vm.width = 150
-    await vm.$nextTick()
-    assert(test.style.width === '100px')
-    assert(test.style.height === '50px')
+    vm.value = 150
+    await nextFrame()
+    assert(el.clientWidth === 150)
+    assert(el.clientHeight === 50)
   })
 })
+
+function nextFrame() {
+  return new Promise(resolve => {
+    requestAnimationFrame(resolve)
+  })
+}
