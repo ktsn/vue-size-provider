@@ -14,8 +14,10 @@
   "main": "dist/vue-size-provider.cjs.js",
   "module": "dist/vue-size-provider.esm.js",
   "unpkg": "dist/vue-size-provider.js",
+  "types": "index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "homepage": "https://github.com/ktsn/vue-size-provider",
   "bugs": "https://github.com/ktsn/vue-size-provider/issues",
