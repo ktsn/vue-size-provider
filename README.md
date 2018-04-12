@@ -2,7 +2,7 @@
 
 Declarative element size observer and provider.
 
-## Outline
+## Motivation
 
 Sometimes you may want to animate an element height when its content is changed. In that case, you need to directly read height value from DOM because Virtual DOM cannot acquire element size. Since it is low-level manipulation, the code may be more messy.
 
@@ -50,7 +50,9 @@ First, wrap elements that you would like to observe their size by `<SizeObserver
 <template>
   <!-- observe content size -->
   <SizeObserver>
+
     <!-- arbitrary contents that you want to observe their size -->
+
   </SizeObserver>
 </template>
 
@@ -73,10 +75,14 @@ Then, wrap them by `<SizeProvider>` and any element that you want to animate its
   <!-- provide observed content size via scoped slot -->
   <SizeProvider>
     <div class="wrapper" slot-scope="{ width, height }" :style="{ height: height + 'px' }">
+
       <!-- observe content size -->
       <SizeObserver>
+
         <!-- arbitrary contents that you want to observe their size -->
+
       </SizeObserver>
+
     </div>
   </SizeProvider>
 </template>
@@ -100,10 +106,14 @@ Finally, you need to write some animation code. In this example, we simply use C
   <!-- provide observed content size via scoped slot -->
   <SizeProvider>
     <div class="wrapper" slot-scope="{ width, height }" :style="{ height: height + 'px' }">
+
       <!-- observe content size -->
       <SizeObserver>
+
         <!-- arbitrary contents that you want to observe their size -->
+
       </SizeObserver>
+
     </div>
   </SizeProvider>
 </template>
