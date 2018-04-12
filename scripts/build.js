@@ -31,7 +31,16 @@ const baseConfig = {
   plugins: [
     nodeResolve(),
     babel({
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
+      presets: [
+        [
+          'env',
+          {
+            modules: false
+          }
+        ]
+      ],
+      plugins: ['external-helpers']
     })
   ]
 }
