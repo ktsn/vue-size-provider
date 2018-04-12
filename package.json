@@ -2,8 +2,14 @@
   "name": "vue-size-provider",
   "version": "0.2.0",
   "author": "katashin",
-  "description": "",
-  "keywords": [],
+  "description": "Declarative element size observer and provider",
+  "keywords": [
+    "Vue",
+    "size",
+    "resize",
+    "declarative",
+    "scoped slot"
+  ],
   "license": "MIT",
   "main": "dist/vue-size-provider.cjs.js",
   "module": "dist/vue-size-provider.esm.js",
