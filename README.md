@@ -4,7 +4,7 @@ Declarative element size observer and provider.
 
 ## Motivation
 
-Sometimes you may want to animate an element height when its content is changed. In that case, you need to directly read height value from DOM because Virtual DOM cannot acquire element size. Since it is low-level manipulation, the code may be more messy.
+Sometimes you may want to animate an element height when its content is changed. In that case, you need to directly read height value from DOM because Virtual DOM cannot acquire element size. Since it is low-level manipulation, the code would become messier.
 
 vue-size-provider solves this problem by hiding low-level code with abstract helper components - `<SizeProvider>` and `<SizeObserver>`. The following gif is an example to show how vue-size-provider works:
 
