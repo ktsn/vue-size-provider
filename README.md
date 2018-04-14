@@ -131,11 +131,16 @@ export default {
 
 <style scoped>
 .wrapper {
+  box-sizing: content-box;
+  border: 1px solid #000;
+  
   /* animate content height smoothly */
   transition: height 300ms ease-out;
 }
 </style>
 ```
+
+Note that you may want to specify `box-sizing: content-box;` to the animating element because the provided `width` and `height` are content size of the observed element. i.e. They do not include padding and border size.
 
 ## License
 
