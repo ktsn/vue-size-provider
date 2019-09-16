@@ -26,7 +26,7 @@ module.exports = {
           babelrc: false,
           presets: [
             [
-              'env',
+              '@babel/env',
               {
                 modules: false,
                 targets: {

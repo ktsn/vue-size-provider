@@ -42,13 +42,12 @@
     "release": "run-s test clean build"
   },
   "devDependencies": {
-    "@storybook/vue": "^3.4.1",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-power-assert": "^2.0.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@storybook/vue": "^5.2.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-power-assert": "^3.0.0",
     "babel-preset-vue": "^2.0.2",
     "eslint": "^6.3.0",
     "eslint-config-ktsn": "^2.0.1",
@@ -59,14 +58,15 @@
     "prettier-config-ktsn": "^1.0.0",
     "resize-observer-polyfill": "^1.5.0",
     "rollup": "^1.21.1",
-    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-replace": "^2.0.0",
     "testem": "^2.0.0",
     "uglify-js": "^3.3.15",
     "vue": "^2.5.16",
-    "vue-loader": "14.2.1",
+    "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.5.16",
-    "webpack": "^3.11.0"
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8"
   }
 }

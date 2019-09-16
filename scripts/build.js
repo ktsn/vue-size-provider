@@ -34,13 +34,12 @@ const baseConfig = {
       exclude: 'node_modules/**',
       presets: [
         [
-          'env',
+          '@babel/env',
           {
             modules: false
           }
         ]
-      ],
-      plugins: ['external-helpers']
+      ]
     })
   ]
 }
@@ -103,7 +102,7 @@ function write(config, bundle, prod) {
   }
 }
 
-function minify({ code }) {
+function minify({ output: [{ code }] }) {
   return uglify.minify(code, {
     compress: {
       toplevel: true
