@@ -61,7 +61,7 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-replace": "^2.0.0",
-    "testem": "^2.0.0",
+    "testem": "^3.0.0",
     "uglify-js": "^3.3.15",
     "vue": "^2.5.16",
     "vue-loader": "^15.7.1",
