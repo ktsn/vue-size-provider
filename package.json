@@ -54,7 +54,7 @@
     "glob": "^7.1.2",
     "npm-run-all": "^4.1.2",
     "power-assert": "^1.4.4",
-    "prettier": "^1.18.2",
+    "prettier": "^2.0.5",
     "prettier-config-ktsn": "^1.0.0",
     "resize-observer-polyfill": "^1.5.0",
     "rollup": "^2.1.0",
