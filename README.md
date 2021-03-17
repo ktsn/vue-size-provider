@@ -73,8 +73,8 @@ Then, wrap them by `<SizeProvider>` and any element that you want to animate its
 ```vue
 <template>
   <!-- provide observed content size via scoped slot -->
-  <SizeProvider>
-    <div class="wrapper" slot-scope="{ width, height }" :style="{ height: height + 'px' }">
+  <SizeProvider v-slot="{ width, height }">
+    <div class="wrapper" :style="{ height: height + 'px' }">
 
       <!-- observe content size -->
       <SizeObserver>
@@ -104,8 +104,8 @@ Finally, you need to write some animation code. In this example, we simply use C
 ```vue
 <template>
   <!-- provide observed content size via scoped slot -->
-  <SizeProvider>
-    <div class="wrapper" slot-scope="{ width, height }" :style="{ height: height + 'px' }">
+  <SizeProvider v-slot="{ width, height }">
+    <div class="wrapper" :style="{ height: height + 'px' }">
 
       <!-- observe content size -->
       <SizeObserver>
